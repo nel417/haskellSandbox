@@ -103,9 +103,15 @@ takeFib = take 50 fibCounter
 listFunc = [ x * y | x <- [1..5], y <- [1..5]] -- 1*5 * 1*5
 
 fizz :: Int -> String
-fizz n | n `mod` 15 == 0  = "FizzBuzz"
-       | n `mod` 3  == 0  = "Fizz"
-       | n `mod` 5  == 0  = "Buzz"
-       | otherwise        = show n
-       --map fizz [1..101]
-	   --think of | (single pipe) as "under these conditions"
+fizz n 
+    | n `mod` 15 == 0  = "FizzBuzz"
+    | n `mod` 3  == 0  = "Fizz"
+    | n `mod` 5  == 0  = "Buzz"
+    | otherwise        = show n
+--map fizz [1..101]
+--think of | (single pipe) as "under these conditions"
+
+fib::Int->Int
+fib 0 = 0
+fib 1 = 1
+fib n = fib (n-1) + fib (n-2)
