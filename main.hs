@@ -147,3 +147,18 @@ myLast = last myList
 --2 find the last but 1 of a list
 myLastMinusOne :: Integer
 myLastMinusOne = (last . init) myList
+
+-- 3 find kth element of list
+-- elementAt'' xs n
+--   | length xs < n = error "Index out of bounds"
+--   | otherwise = fst . last $ zip xs [1 .. n]
+
+--4 find the number of elements in list
+lengthList = (sum . map (const 1)) myList
+
+-- 5 reverse a list
+reversedList = reverse myList
+
+--6 check palindromes
+isPalindrome :: Eq a => [a] -> Bool
+isPalindrome xs = xs == (reverse xs)
